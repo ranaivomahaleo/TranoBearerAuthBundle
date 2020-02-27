@@ -11,6 +11,7 @@
 
 namespace Trano\BearerAuthBundle\Security;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationCredentialsNotFoundException;
@@ -18,6 +19,7 @@ use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
+use Trano\BearerAuthBundle\Entity\BearerUser;
 
 /**
  * @author     ranaivo.razakanirina@atety.com
@@ -26,7 +28,11 @@ class BearerTokenAuthenticator extends AbstractGuardAuthenticator
 {
     public function start(Request $request, AuthenticationException $authException = null)
     {
-        // TODO: Implement start() method.
+        // By default returns authentication required response.
+        return new JsonResponse(
+            ['Authentication required'],
+            JsonResponse::HTTP_FORBIDDEN
+        );
     }
 
     public function supports(Request $request)
@@ -60,7 +66,8 @@ class BearerTokenAuthenticator extends AbstractGuardAuthenticator
 
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
-        // TODO: Implement getUser() method.
+        // By default return empty BearerUser
+        return new BearerUser();
     }
 
     public function checkCredentials($credentials, UserInterface $user)
