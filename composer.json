@@ -1,0 +1,23 @@
+{
+    "name": "trano/tranobearerauthbundle",
+    "description": "Trano Bearer Auth Bundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Ranaivo Razakanirina",
+            "email": "ranaivo.razakanirina@atety.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Trano\\BearerAuthBundle\\": ""
+        }
+    },
+    "require": {
+        "php": "^7.1",
+        "symfony/security-core": "^3.4|^4.3|^5.0",
+        "symfony/security-guard": "^3.4|^4.3|^5.0"
+    }
+}
