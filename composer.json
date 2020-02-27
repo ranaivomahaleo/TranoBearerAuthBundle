@@ -17,7 +17,6 @@
     },
     "require": {
         "php": "^7.1",
-        "symfony/security-core": "^3.4|^4.3|^5.0",
-        "symfony/security-guard": "^3.4|^4.3|^5.0"
+        "symfony/security-bundle": "^4.3|^5.0"
     }
 }
