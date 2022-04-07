@@ -88,6 +88,14 @@ class BearerUser implements UserInterface, \Serializable
     }
 
     /**
+     * Returns the identifier for this user (e.g. its username or email address).
+     */
+    public function getUserIdentifier(): string
+    {
+        return $this->username;
+    }
+
+    /**
      * @param array $roles
      * @return BearerUser
      */
